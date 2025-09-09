@@ -1,0 +1,42 @@
+@startuml
+class main.fourwheels.Camion {
+- double capacitaMassimaCarico
+}
+
+class main.Main {
++ {static} void main(String[])
+}
+
+class main.fourwheels.Auto {
+- int numeroPorte
+
+}
+
+
+class main.twowheels.Moto {
+- String tipo
++ void faiRumore()
+}
+
+
+class main.Veicolo {
+- String targa
+- String marca
+- String modello
+- int numeroPosti
+- Motore motore
++ void faiRumore()
+}
+
+
+class main.mechanics.Motore {
+- String numeroSerie
+- String modello
+}
+
+
+
+main.Veicolo <|-- main.fourwheels.Camion
+main.Veicolo <|-- main.fourwheels.Auto
+main.Veicolo <|-- main.twowheels.Moto
+@enduml
