@@ -1,0 +1,55 @@
+@startuml
+class zoo.Main {
++ {static} void main(String[])
+}
+
+interface zoo.Feedable {
++ void eat(String)
+}
+
+class zoo.ZooApp {
++ {static} void main(String[])
+}
+
+abstract class zoo.Mammal {
+- boolean hasFur
++ boolean isHasFur()
++ void setHasFur(boolean)
+}
+
+
+abstract class zoo.Animal {
+- String name
+- int age
++ {abstract}String makeSound()
++ String getName()
++ void setName(String)
++ String toString()
+}
+
+
+class zoo.Elephant {
++ String makeSound()
++ void eat(String)
+}
+
+class zoo.Parrot {
++ String makeSound()
++ void eat(String)
+}
+
+class zoo.Lion {
++ String makeSound()
++ void eat(String)
+}
+
+
+
+zoo.Animal <|-- zoo.Mammal
+zoo.Feedable <|.. zoo.Elephant
+zoo.Mammal <|-- zoo.Elephant
+zoo.Feedable <|.. zoo.Parrot
+zoo.Animal <|-- zoo.Parrot
+zoo.Feedable <|.. zoo.Lion
+zoo.Mammal <|-- zoo.Lion
+@enduml
